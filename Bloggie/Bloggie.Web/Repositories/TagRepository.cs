@@ -1,22 +1,22 @@
-﻿using Bloggie.Web.Data;
-using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Data;
+using BloggieToBike.Web.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
     public class TagRepository : ITagRepository
     {
-        private readonly BloggieDbContext bloggieDbContext;
+        private readonly BloggieToBikeDbContext bloggieToBikeDbContext;
 
-        public TagRepository(BloggieDbContext bloggieDbContext)
+        public TagRepository(BloggieToBikeDbContext bloggieToBikeDbContext)
         {
-            this.bloggieDbContext = bloggieDbContext;
+            this.bloggieToBikeDbContext = bloggieToBikeDbContext;
         }
 
 
         public async Task<IEnumerable<Tag>> GetAllAsync()
         {
-            var tags = await bloggieDbContext.Tags.ToListAsync();
+            var tags = await bloggieToBikeDbContext.Tags.ToListAsync();
 
             return tags.DistinctBy(x => x.Name.ToLower());
 

@@ -1,6 +1,6 @@
-﻿using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Models.Domain;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
     public interface ITagRepository
     {

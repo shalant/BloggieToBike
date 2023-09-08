@@ -37,11 +37,14 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/AccessDenied";
 });
 
-builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
+//builder.Services.AddScoped<IBlogPostRepository, BlogPostRepository>();
+builder.Services.AddScoped<IBikeRouteRepository, BikeRouteRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepositoryCloudinary>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
-builder.Services.AddScoped<IBlogPostLikeRepository, BlogPostLikeRepository>();
-builder.Services.AddScoped<IBlogPostCommentRepository, BlogPostCommentRepository>();
+//builder.Services.AddScoped<IBlogPostLikeRepository, BlogPostLikeRepository>();
+builder.Services.AddScoped<IBikeRouteLikeRepository, BikeRouteLikeRepository>();
+//builder.Services.AddScoped<IBlogPostCommentRepository, BlogPostCommentRepository>();
+builder.Services.AddScoped<IBikeRouteCommentRepository, BikeRouteCommentRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();

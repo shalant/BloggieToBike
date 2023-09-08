@@ -6,13 +6,13 @@ namespace BloggieToBike.Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BlogPostLikeController : Controller
+    public class BikeRouteLikeController : Controller
     {
         //private readonly IBlogPostLikeRepository blogPostLikeRepository;
         private readonly IBikeRouteLikeRepository bikeRouteLikeRepository;
 
         //public BlogPostLikeController(IBlogPostLikeRepository blogPostLikeRepository)
-        public BlogPostLikeController(IBikeRouteLikeRepository bikeRouteLikeRepository)
+        public BikeRouteLikeController(IBikeRouteLikeRepository bikeRouteLikeRepository)
         {
             this.bikeRouteLikeRepository = bikeRouteLikeRepository;
         }

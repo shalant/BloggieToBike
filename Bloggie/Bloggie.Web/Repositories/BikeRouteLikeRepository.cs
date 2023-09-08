@@ -1,41 +1,41 @@
-﻿using Bloggie.Web.Data;
-using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Data;
+using BloggieToBike.Web.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
-    public class BlogPostLikeRepository : IBlogPostLikeRepository
+    public class BikeRouteLikeRepository : IBikeRouteLikeRepository
     {
-        private readonly BloggieDbContext bloggieDbContext;
+        private readonly BloggieToBikeDbContext bloggieToBikeDbContext;
 
-        public BlogPostLikeRepository(BloggieDbContext bloggieDbContext)
+        public BikeRouteLikeRepository(BloggieToBikeDbContext bloggieToBikeDbContext)
         {
-            this.bloggieDbContext = bloggieDbContext;
+            this.bloggieToBikeDbContext = bloggieToBikeDbContext;
         }
 
-        public async Task AddLikeForBlog(Guid blogPostId, Guid userId)
+        public async Task AddLikeForBikeRoute(Guid bikeRouteId, Guid userId)
         {
-            var like = new BlogPostLike
+            var like = new BikeRouteLike
             {
                 Id = Guid.NewGuid(),
-                BlogPostId = blogPostId,
+                BikeRouteId = bikeRouteId,
                 UserId = userId,
             };
 
-            await bloggieDbContext.BlogPostLike.AddAsync(like);
-            await bloggieDbContext.SaveChangesAsync();
+            await bloggieToBikeDbContext.BikeRouteLikes.AddAsync(like);
+            await bloggieToBikeDbContext.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<BlogPostLike>> GetLikesForBlog(Guid blogPostId)
+        public async Task<IEnumerable<BikeRouteLike>> GetLikesForBikeRoute(Guid bikeRouteId)
         {
-            return await bloggieDbContext.BlogPostLike.Where(x => x.BlogPostId == blogPostId)
+            return await bloggieToBikeDbContext.BikeRouteLikes.Where(x => x.BikeRouteId == bikeRouteId)
                 .ToListAsync();
         }
 
-        public async Task<int> GetTotalLikesForBlog(Guid blogPostId)
+        public async Task<int> GetTotalLikesForBikeRoute(Guid bikeRouteId)
         {
-            return await bloggieDbContext.BlogPostLike
-                .CountAsync(x => x.BlogPostId == blogPostId);
+            return await bloggieToBikeDbContext.BikeRouteLikes
+                .CountAsync(x => x.BikeRouteId == bikeRouteId);
         }
     }
 }

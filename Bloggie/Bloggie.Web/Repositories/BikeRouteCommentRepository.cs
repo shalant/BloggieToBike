@@ -1,28 +1,28 @@
-﻿using Bloggie.Web.Data;
-using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Data;
+using BloggieToBike.Web.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
-    public class BlogPostCommentRepository : IBlogPostCommentRepository
+    public class BikeRouteCommentRepository : IBikeRouteCommentRepository
     {
-        private readonly BloggieDbContext bloggieDbContext;
+        private readonly BloggieToBikeDbContext bloggieToBikeDbContext;
 
-        public BlogPostCommentRepository(BloggieDbContext bloggieDbContext)
+        public BikeRouteCommentRepository(BloggieToBikeDbContext bloggieToBikeDbContext)
         {
-            this.bloggieDbContext = bloggieDbContext;
+            this.bloggieToBikeDbContext = bloggieToBikeDbContext;
         }
 
-        public async Task<BlogPostComment> AddAsync(BlogPostComment blogPostComment)
+        public async Task<BikeRouteComment> AddAsync(BikeRouteComment bikeRouteComment)
         {
-            await bloggieDbContext.BlogPostComment.AddAsync(blogPostComment);
-            await bloggieDbContext.SaveChangesAsync();
-            return blogPostComment;
+            await bloggieToBikeDbContext.BikeRouteComments.AddAsync(bikeRouteComment);
+            await bloggieToBikeDbContext.SaveChangesAsync();
+            return bikeRouteComment;
         }
 
-        public async Task<IEnumerable<BlogPostComment>> GetAllAsync(Guid blogPostId)
+        public async Task<IEnumerable<BikeRouteComment>> GetAllAsync(Guid bikeRouteId)
         {
-            return await bloggieDbContext.BlogPostComment.Where(x => x.BlogPostId == blogPostId).ToListAsync();
+            return await bloggieToBikeDbContext.BikeRouteComments.Where(x => x.BikeRouteId == bikeRouteId).ToListAsync();
         }
     }
 }

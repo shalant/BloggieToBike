@@ -1,96 +1,97 @@
-﻿using Bloggie.Web.Data;
-using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Data;
+using BloggieToBike.Web.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
-    public class BlogPostRepository : IBlogPostRepository
+    public class BikeRouteRepository : IBikeRouteRepository
     {
-        private readonly BloggieDbContext bloggieDbContext;
+        private readonly BloggieToBikeDbContext bloggieToBikeDbContext;
 
-        public BlogPostRepository(BloggieDbContext bloggieDbContext)
+        public BikeRouteRepository(BloggieToBikeDbContext bloggieToBikeDbContext)
         {
-            this.bloggieDbContext = bloggieDbContext;
+            this.bloggieToBikeDbContext = bloggieToBikeDbContext;
         }
 
-        public async Task<BlogPost> AddAsync(BlogPost blogPost)
+        public async Task<BikeRoute> AddAsync(BikeRoute bikeRoute)
         {
-            await bloggieDbContext.BlogPosts.AddAsync(blogPost);
-            await bloggieDbContext.SaveChangesAsync();
-            return blogPost;
+            await bloggieToBikeDbContext.BikeRoutes.AddAsync(bikeRoute);
+            await bloggieToBikeDbContext.SaveChangesAsync();
+            return bikeRoute;
         }
 
         public async Task<bool> DeleteAsync(Guid id)
         {
-            var existingBlog = await bloggieDbContext.BlogPosts.FindAsync(id);
-            if(existingBlog != null)
+            var existingBikeRoute = await bloggieToBikeDbContext.BikeRoutes.FindAsync(id);
+            if(existingBikeRoute != null)
             {
-                bloggieDbContext.BlogPosts.Remove(existingBlog);
-                await bloggieDbContext.SaveChangesAsync();
+                bloggieToBikeDbContext.BikeRoutes.Remove(existingBikeRoute);
+                await bloggieToBikeDbContext.SaveChangesAsync();
                 return true;
             }
 
             return false;
         }
 
-        public async Task<IEnumerable<BlogPost>> GetAllAsync()
+        public async Task<IEnumerable<BikeRoute>> GetAllAsync()
         {
-            return await bloggieDbContext.BlogPosts.Include(nameof(BlogPost.Tags)).ToListAsync();
+            return await bloggieToBikeDbContext.BikeRoutes.Include(nameof(BikeRoute.Tags)).ToListAsync();
         }
 
-        public async Task<IEnumerable<BlogPost>> GetAllAsync(string tagName)
+        public async Task<IEnumerable<BikeRoute>> GetAllAsync(string tagName)
         {
-            return await (bloggieDbContext.BlogPosts.Include(nameof(BlogPost.Tags))
+            return await (bloggieToBikeDbContext.BikeRoutes.Include(nameof(BikeRoute.Tags))
                 .Where(x => x.Tags.Any(x => x.Name == tagName)))
                 .ToListAsync();
         }
 
-        public async Task<BlogPost> GetAsync(Guid id)
+        public async Task<BikeRoute> GetAsync(Guid id)
         {
-            return await bloggieDbContext.BlogPosts.Include(nameof(BlogPost.Tags))
+            return await bloggieToBikeDbContext.BikeRoutes.Include(nameof(BikeRoute.Tags))
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<BlogPost> GetAsync(string urlHandle)
+        public async Task<BikeRoute> GetAsync(string stravaLink)
         {
-            return await bloggieDbContext.BlogPosts.Include(nameof(BlogPost.Tags))
-                .FirstOrDefaultAsync(x => x.UrlHandle == urlHandle);
+            return await bloggieToBikeDbContext.BikeRoutes.Include(nameof(BikeRoute.Tags))
+                .FirstOrDefaultAsync(x => x.StravaLink == stravaLink);
         }
 
-        public async Task<BlogPost> UpdateAsync(BlogPost blogPost)
+        public async Task<BikeRoute> UpdateAsync(BikeRoute bikeRoute)
         {
-            var existingBlogPost = await bloggieDbContext.BlogPosts.Include(nameof(BlogPost.Tags))
-                .FirstOrDefaultAsync(x => x.Id == blogPost.Id);
+            var existingBikeRoute = await bloggieToBikeDbContext.BikeRoutes.Include(nameof(BikeRoute.Tags))
+                .FirstOrDefaultAsync(x => x.Id == bikeRoute.Id);
 
-            if (existingBlogPost != null)
+            if (existingBikeRoute != null)
             {
-                existingBlogPost.Heading = blogPost.Heading;
-                existingBlogPost.PageTitle = blogPost.PageTitle;
-                existingBlogPost.Content = blogPost.Content;
-                existingBlogPost.ShortDescription = blogPost.ShortDescription;
-                existingBlogPost.FeaturedImageUrl = blogPost.FeaturedImageUrl;
-                existingBlogPost.UrlHandle = blogPost.UrlHandle;
-                existingBlogPost.PublishedDate = blogPost.PublishedDate;
-                existingBlogPost.Author = blogPost.Author;
-                existingBlogPost.Visible = blogPost.Visible;
+                existingBikeRoute.Name = bikeRoute.Name;
+                existingBikeRoute.Length = bikeRoute.Length;
+                existingBikeRoute.Direction = bikeRoute.Direction;
+                existingBikeRoute.Content = bikeRoute.Content;
+                existingBikeRoute.ShortDescription = bikeRoute.ShortDescription;
+                existingBikeRoute.FeaturedImageUrl = bikeRoute.FeaturedImageUrl;
+                existingBikeRoute.StravaLink = bikeRoute.StravaLink;
+                existingBikeRoute.PublishedDate = bikeRoute.PublishedDate;
+                existingBikeRoute.Author = bikeRoute.Author;
+                existingBikeRoute.Visible = bikeRoute.Visible;
 
 
-                if(blogPost.Tags != null && blogPost.Tags.Any())
+                if(bikeRoute.Tags != null && bikeRoute.Tags.Any())
                 {
                     // Delete the existing tags
-                    bloggieDbContext.Tags.RemoveRange(existingBlogPost.Tags);
+                    bloggieToBikeDbContext.Tags.RemoveRange(existingBikeRoute.Tags);
 
                     // Add new tags
-                    blogPost.Tags.ToList().ForEach(x => x.BlogPostId = existingBlogPost.Id);
-                    await bloggieDbContext.Tags.AddRangeAsync(blogPost.Tags);
+                    bikeRoute.Tags.ToList().ForEach(x => x.BikeRouteId = existingBikeRoute.Id);
+                    await bloggieToBikeDbContext.Tags.AddRangeAsync(bikeRoute.Tags);
 
                 }
 
                 
             }
 
-            await bloggieDbContext.SaveChangesAsync();
-            return existingBlogPost;
+            await bloggieToBikeDbContext.SaveChangesAsync();
+            return existingBikeRoute;
         }
     }
 }

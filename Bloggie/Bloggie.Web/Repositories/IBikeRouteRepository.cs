@@ -1,15 +1,15 @@
-﻿using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Models.Domain;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
-    public interface IBlogPostRepository
+    public interface IBikeRouteRepository
     {
-        Task<IEnumerable<BlogPost>> GetAllAsync();
-        Task<IEnumerable<BlogPost>> GetAllAsync(string tagName);
-        Task<BlogPost> GetAsync(Guid id);
-        Task<BlogPost> GetAsync(string urlHandle);
-        Task<BlogPost> AddAsync(BlogPost blogPost);
-        Task<BlogPost> UpdateAsync(BlogPost blogPost);
+        Task<IEnumerable<BikeRoute>> GetAllAsync();
+        Task<IEnumerable<BikeRoute>> GetAllAsync(string tagName);
+        Task<BikeRoute> GetAsync(Guid id);
+        Task<BikeRoute> GetAsync(string urlHandle);
+        Task<BikeRoute> AddAsync(BikeRoute bikeRoute);
+        Task<BikeRoute> UpdateAsync(BikeRoute bikeRoute);
         Task<bool> DeleteAsync(Guid id);
     }
 }

@@ -8,6 +8,6 @@ namespace BloggieToBike.Web.Repositories
 
         Task AddLikeForBikeRoute(Guid blogPostId, Guid userId);
 
-        Task<IEnumerable<BikeRouteLike>> GetLikesForBikeRoute(Guid blogPostId);
+        Task<IEnumerable<BikeRouteLike>> GetLikesForBikeRoute(Guid bikeRouteId);
     }
 }

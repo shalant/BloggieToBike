@@ -1,11 +1,11 @@
-﻿using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Models.Domain;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
-    public interface IBlogPostCommentRepository
+    public interface IBikeRouteCommentRepository
     {
-        Task<BlogPostComment> AddAsync(BlogPostComment blogPostComment);
+        Task<BikeRouteComment> AddAsync(BikeRouteComment bikeRouteComment);
 
-        Task<IEnumerable<BlogPostComment>> GetAllAsync(Guid blogPostId);
+        Task<IEnumerable<BikeRouteComment>> GetAllAsync(Guid bikeRouteId);
     }
 }

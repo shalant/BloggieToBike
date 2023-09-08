@@ -1,6 +1,6 @@
 ﻿using CloudinaryDotNet;
 
-namespace Bloggie.Web.Repositories
+namespace BloggieToBike.Web.Repositories
 {
     public class ImageRepositoryCloudinary : IImageRepository
     {

@@ -1,4 +1,4 @@
-﻿namespace Bloggie.Web.Repositories
+﻿namespace BloggieToBike.Web.Repositories
 {
     public interface IImageRepository
     {
