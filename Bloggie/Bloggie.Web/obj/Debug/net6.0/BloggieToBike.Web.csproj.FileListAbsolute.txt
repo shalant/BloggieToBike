@@ -1,3 +1,11 @@
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.csproj.AssemblyReference.cache
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.AssemblyInfoInputs.cache
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.AssemblyInfo.cs
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.csproj.CoreCompileInputs.cache
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.RazorAssemblyInfo.cache
+C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.RazorAssemblyInfo.cs
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\bin\Debug\net6.0\appsettings.json
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\bin\Debug\net6.0\BloggieToBike.Web.staticwebassets.runtime.json
@@ -68,14 +76,6 @@ C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\bin\Debug\net6
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.csproj.AssemblyReference.cache
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.AssemblyInfoInputs.cache
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.AssemblyInfo.cs
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.csproj.CoreCompileInputs.cache
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.RazorAssemblyInfo.cache
-C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\BloggieToBike.Web.RazorAssemblyInfo.cs
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\staticwebassets\msbuild.BloggieToBike.Web.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\staticwebassets\msbuild.build.BloggieToBike.Web.props
 C:\Users\digdr\Documents\coding\BloggieToBike\Bloggie\Bloggie.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.BloggieToBike.Web.props

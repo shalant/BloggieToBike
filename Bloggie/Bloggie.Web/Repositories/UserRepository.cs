@@ -1,4 +1,4 @@
-﻿using Bloggie.Web.Data;
+﻿using BloggieToBike.Web.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -47,7 +47,7 @@ namespace Bloggie.Web.Repositories
         {
             var users = await authDbContext.Users.ToListAsync();
             var superAdminUser = await authDbContext.Users.
-                FirstOrDefaultAsync(x => x.Email == "superadmin@bloggie.com");
+                FirstOrDefaultAsync(x => x.Email == "doug.rosenberg@gmail.com");
 
             if(superAdminUser != null)
             {

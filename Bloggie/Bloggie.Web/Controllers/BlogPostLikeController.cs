@@ -1,35 +1,37 @@
-﻿using Bloggie.Web.Models.ViewModels;
-using Bloggie.Web.Repositories;
+﻿using BloggieToBike.Web.Models.ViewModels;
+using BloggieToBike.Web.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Bloggie.Web.Controllers
+namespace BloggieToBike.Web.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
     public class BlogPostLikeController : Controller
     {
-        private readonly IBlogPostLikeRepository blogPostLikeRepository;
+        //private readonly IBlogPostLikeRepository blogPostLikeRepository;
+        private readonly IBikeRouteLikeRepository bikeRouteLikeRepository;
 
-        public BlogPostLikeController(IBlogPostLikeRepository blogPostLikeRepository)
+        //public BlogPostLikeController(IBlogPostLikeRepository blogPostLikeRepository)
+        public BlogPostLikeController(IBikeRouteLikeRepository bikeRouteLikeRepository)
         {
-            this.blogPostLikeRepository = blogPostLikeRepository;
+            this.bikeRouteLikeRepository = bikeRouteLikeRepository;
         }
 
         [Route("Add")]
         [HttpPost]
-        public async Task<IActionResult> AddLike([FromBody] AddBlogPostLikeRequest addBlogPostLikeRequest)
+        public async Task<IActionResult> AddLike([FromBody] AddBikeRouteLikeRequest addBikeRouteLikeRequest)
         {
-            await blogPostLikeRepository.AddLikeForBlog(addBlogPostLikeRequest.BlogPostId,
-                addBlogPostLikeRequest.UserId);
+            await bikeRouteLikeRepository.AddLikeForBikeRoute(addBikeRouteLikeRequest.BikeRouteId,
+                addBikeRouteLikeRequest.UserId);
 
             return Ok();
         }
 
         [HttpGet]
-        [Route("{blogPostId:Guid}/totalLikes")]
-        public async Task<IActionResult> GetTotalLikes([FromRoute] Guid blogPostId)
+        [Route("{bikeRouteId:Guid}/totalLikes")]
+        public async Task<IActionResult> GetTotalLikes([FromRoute] Guid bikeRouteId)
         {
-            var totalLikes = await blogPostLikeRepository.GetTotalLikesForBlog(blogPostId);
+            var totalLikes = await bikeRouteLikeRepository.GetTotalLikesForBikeRoute(bikeRouteId);
 
             return Ok(totalLikes);
         }

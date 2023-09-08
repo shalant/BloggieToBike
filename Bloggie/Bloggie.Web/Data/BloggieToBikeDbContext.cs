@@ -1,17 +1,17 @@
-﻿using Bloggie.Web.Models.Domain;
+﻿using BloggieToBike.Web.Models.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bloggie.Web.Data
+namespace BloggieToBike.Web.Data
 {
-    public class BloggieDbContext : DbContext
+    public class BloggieToBikeDbContext : DbContext
     {
-        public BloggieDbContext(DbContextOptions<BloggieDbContext> options) : base(options)
+        public BloggieToBikeDbContext(DbContextOptions<BloggieToBikeDbContext> options) : base(options)
         {
         }
 
-        public DbSet<BlogPost> BlogPosts { get; set; }
+        public DbSet<BikeRoute> BikeRoutes { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<BlogPostLike> BlogPostLike { get; set; }
-        public DbSet<BlogPostComment> BlogPostComment { get; set; }
+        public DbSet<BikeRouteLike> BikeRouteLikes { get; set; }
+        public DbSet<BikeRouteComment> BikeRouteComments { get; set; }
     }
 }

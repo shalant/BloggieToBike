@@ -1,5 +1,5 @@
-using Bloggie.Web.Data;
-using Bloggie.Web.Repositories;
+using BloggieToBike.Web.Data;
+using BloggieToBike.Web.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,13 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<BloggieDbContext>(options =>
+builder.Services.AddDbContext<BloggieToBikeDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("BloggieDbConnectionString")));
+        builder.Configuration.GetConnectionString("BloggieToBikeDbConnectionString")));
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("BloggieAuthDbConnectionString")));
+        builder.Configuration.GetConnectionString("BloggieToBikeAuthDbConnectionString")));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AuthDbContext>();

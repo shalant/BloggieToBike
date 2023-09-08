@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Bloggie.Web.Data
+namespace BloggieToBike.Web.Data
 {
     public class AuthDbContext : IdentityDbContext
     {
