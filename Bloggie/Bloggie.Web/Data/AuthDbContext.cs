@@ -52,10 +52,10 @@ namespace Bloggie.Web.Data
             var superAdminUser = new IdentityUser()
             {
                 Id = superAdminId,
-                UserName = "superadmin@bloggie.com",
-                Email = "superadmin@bloggie.com",
-                NormalizedEmail = "superadmin@bloggie.com".ToUpper(),
-                NormalizedUserName = "superadmin@bloggie.com".ToUpper()
+                UserName = "doug.rosenberg@gmail.com",
+                Email = "doug.rosenberg@gmail.com",
+                NormalizedEmail = "doug.rosenberg@gmail.com".ToUpper(),
+                NormalizedUserName = "doug.rosenberg@gmail.com".ToUpper()
             };
 
             superAdminUser.PasswordHash = new PasswordHasher<IdentityUser>()
