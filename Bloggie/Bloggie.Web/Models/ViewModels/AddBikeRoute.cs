@@ -1,21 +1,32 @@
-﻿namespace Bloggie.Web.Models.Domain
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BloggieToBike.Web.Models.ViewModels
 {
-    public class BlogPost
+    public class AddBikeRoute
     {
-        public Guid Id { get; set; }
+        [Required]
         public string Heading { get; set; }
+
+        [Required]
         public string PageTitle { get; set; }
+
+        [Required]
         public string Content { get; set; }
+
+        [Required]
         public string ShortDescription { get; set; }
+
+        [Required]
         public string FeaturedImageUrl { get; set; }
+
+        [Required]
         public string UrlHandle { get; set; }
+
+        [Required]
         public DateTime PublishedDate { get; set; }
+
+        [Required]
         public string Author { get; set; }
         public bool Visible { get; set; }
-
-        // Navigation Property
-        //public ICollection<Tag> Tags { get; set; }
-        public ICollection<BlogPostLike> Likes { get; set; }
-        public ICollection<BlogPostComment> Comments { get; set; }
     }
 }

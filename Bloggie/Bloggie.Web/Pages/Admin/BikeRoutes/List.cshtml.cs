@@ -1,25 +1,25 @@
-using Bloggie.Web.Data;
-using Bloggie.Web.Models.Domain;
-using Bloggie.Web.Models.ViewModels;
-using Bloggie.Web.Repositories;
+using BloggieToBike.Web.Data;
+using BloggieToBike.Web.Models.Domain;
+using BloggieToBike.Web.Models.ViewModels;
+using BloggieToBike.Web.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 
-namespace Bloggie.Web.Pages.Admin.Blogs
+namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
 {
     [Authorize(Roles = "Admin")]
     public class ListModel : PageModel
     {
-        private readonly IBlogPostRepository blogPostRepository;
+        private readonly IBikeRouteRepository bikeRouteRepository;
 
-        public List<BlogPost> BlogPosts { get; set; }
+        public List<BikeRoute> BikeRoutes { get; set; }
 
-        public ListModel(IBlogPostRepository blogPostRepository)
+        public ListModel(IBikeRouteRepository bikeRouteRepository)
         {
-            this.blogPostRepository = blogPostRepository;
+            this.bikeRouteRepository = bikeRouteRepository;
         }
 
         public async Task OnGet()
@@ -30,7 +30,7 @@ namespace Bloggie.Web.Pages.Admin.Blogs
                 ViewData["Notification"] = JsonSerializer.Deserialize<Notification>(notificationJson);
             }
 
-            BlogPosts = (await blogPostRepository.GetAllAsync())?.ToList();
+            BikeRoutes = (await bikeRouteRepository.GetAllAsync())?.ToList();
         }
     }
 }

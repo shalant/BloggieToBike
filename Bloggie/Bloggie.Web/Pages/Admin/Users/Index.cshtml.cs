@@ -1,11 +1,11 @@
-using Bloggie.Web.Models.ViewModels;
-using Bloggie.Web.Repositories;
+using BloggieToBike.Web.Models.ViewModels;
+using BloggieToBike.Web.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Bloggie.Web.Pages.Admin.Users
+namespace BloggieToBike.Web.Pages.Admin.Users
 {
     [Authorize(Roles = "Admin")]
     public class IndexModel : PageModel

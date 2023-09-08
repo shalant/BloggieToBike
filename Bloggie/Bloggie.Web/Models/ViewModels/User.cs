@@ -1,4 +1,4 @@
-﻿namespace Bloggie.Web.Models.ViewModels
+﻿namespace BloggieToBike.Web.Models.ViewModels
 {
     public class User
     {

@@ -1,5 +1,5 @@
 ﻿@page "/tags/{tagName}"
-@model Bloggie.Web.Pages.Tags.DetailsModel
+@model BloggieToBike.Web.Pages.Tags.DetailsModel
 @{
 }
 
@@ -10,9 +10,9 @@
 
             <h2 class="mb-5 display-3">Blogs</h2>
 
-            @if (Model.Blogs != null && Model.Blogs.Any())
+            @if (Model.BikeRoutes != null && Model.BikeRoutes.Any())
             {
-                foreach (var blog in Model.Blogs)
+                foreach (var blog in Model.BikeRoutes)
                 {
                     <div class="mb-5 bg-light box-shadow">
                         <img src="@blog.FeaturedImageUrl" alt="@blog.Heading" class="mb-2 d-block img-fluid" />

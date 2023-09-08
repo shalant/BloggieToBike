@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Bloggie.Web.Migrations.AuthDb
 {
-    [DbContext(typeof(AuthDbContext))]
+    //[DbContext(typeof(AuthDbContext))]
     [Migration("20221123212451_Adding Identity")]
     partial class AddingIdentity
     {

@@ -1,4 +1,4 @@
-﻿namespace Bloggie.Web.Enums
+﻿namespace BloggieToBike.Web.Enums
 {
     public enum NotificationType
     {

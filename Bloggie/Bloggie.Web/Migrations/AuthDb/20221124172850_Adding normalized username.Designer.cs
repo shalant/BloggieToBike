@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Bloggie.Web.Migrations.AuthDb
 {
-    [DbContext(typeof(AuthDbContext))]
+    //[DbContext(typeof(AuthDbContext))]
     [Migration("20221124172850_Adding normalized username")]
     partial class Addingnormalizedusername
     {

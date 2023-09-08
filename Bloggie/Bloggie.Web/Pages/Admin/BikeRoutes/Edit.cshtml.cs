@@ -1,22 +1,22 @@
-using Bloggie.Web.Data;
-using Bloggie.Web.Models.Domain;
-using Bloggie.Web.Models.ViewModels;
-using Bloggie.Web.Repositories;
+using BloggieToBike.Web.Data;
+using BloggieToBike.Web.Models.Domain;
+using BloggieToBike.Web.Models.ViewModels;
+using BloggieToBike.Web.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 
-namespace Bloggie.Web.Pages.Admin.Blogs
+namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
 {
     [Authorize(Roles = "Admin")]
     public class EditModel : PageModel
     {
-        private readonly IBlogPostRepository blogPostRepository;
+        private readonly IBikeRouteRepository bikeRouteRepository;
 
         [BindProperty]
-        public EditBlogPostRequest BlogPost { get; set; }
+        public EditBikeRouteRequest BikeRoute { get; set; }
 
         [BindProperty]
         public IFormFile FeaturedImage { get; set; }
@@ -25,27 +25,27 @@ namespace Bloggie.Web.Pages.Admin.Blogs
         [Required]
         public string Tags { get; set; }
 
-        public EditModel(IBlogPostRepository blogPostRepository)
+        public EditModel(IBikeRouteRepository bikeRouteRepository)
         {
-            this.blogPostRepository = blogPostRepository;
+            this.bikeRouteRepository = bikeRouteRepository;
         }
 
 
         public async Task OnGet(Guid id)
         {
-            var blogPostDomainModel = await blogPostRepository.GetAsync(id);
+            var blogPostDomainModel = await bikeRouteRepository.GetAsync(id);
 
             if(blogPostDomainModel != null && blogPostDomainModel.Tags != null)
             {
-                BlogPost = new EditBlogPostRequest
+                BikeRoute = new EditBikeRouteRequest
                 {
                     Id = blogPostDomainModel.Id,
-                    Heading = blogPostDomainModel.Heading,
-                    PageTitle = blogPostDomainModel.PageTitle,
+                    //Heading = blogPostDomainModel.Heading,
+                    //PageTitle = blogPostDomainModel.PageTitle,
                     Content = blogPostDomainModel.Content,
                     ShortDescription = blogPostDomainModel.ShortDescription,
                     FeaturedImageUrl = blogPostDomainModel.FeaturedImageUrl,
-                    UrlHandle = blogPostDomainModel.UrlHandle,
+                    //UrlHandle = blogPostDomainModel.UrlHandle,
                     PublishedDate = blogPostDomainModel.PublishedDate,
                     Author = blogPostDomainModel.Author,
                     Visible = blogPostDomainModel.Visible,
@@ -55,30 +55,30 @@ namespace Bloggie.Web.Pages.Admin.Blogs
             }
         }
 
-        public async Task<IActionResult> OnPostEdit()
+        public async Task<IActionResult> OnRouteEdit()
         {
-            ValidateEditBlogPost();
+            ValidateEditBikeRoute();
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var blogPostDomainModel = new BlogPost
+                    var bikeRouteDomainModel = new BikeRoute
                     {
-                        Id = BlogPost.Id,
-                        Heading = BlogPost.Heading,
-                        PageTitle = BlogPost.PageTitle,
-                        Content = BlogPost.Content,
-                        ShortDescription = BlogPost.ShortDescription,
-                        FeaturedImageUrl = BlogPost.FeaturedImageUrl,
-                        UrlHandle = BlogPost.UrlHandle,
-                        PublishedDate = BlogPost.PublishedDate,
-                        Author = BlogPost.Author,
-                        Visible = BlogPost.Visible,
+                        Id = BikeRoute.Id,
+                        Heading = BikeRoute.Heading,
+                        PageTitle = BikeRoute.PageTitle,
+                        Content = BikeRoute.Content,
+                        ShortDescription = BikeRoute.ShortDescription,
+                        FeaturedImageUrl = BikeRoute.FeaturedImageUrl,
+                        UrlHandle = BikeRoute.UrlHandle,
+                        PublishedDate = BikeRoute.PublishedDate,
+                        Author = BikeRoute.Author,
+                        Visible = BikeRoute.Visible,
                         Tags = new List<Tag>(Tags.Split(',').Select(x => new Tag() { Name = x.Trim() }))
                     };
 
-                    await blogPostRepository.UpdateAsync(blogPostDomainModel);
+                    await bikeRouteRepository.UpdateAsync(bikeRouteDomainModel);
 
                     ViewData["Notification"] = new Notification
                     {
@@ -103,7 +103,7 @@ namespace Bloggie.Web.Pages.Admin.Blogs
 
         public async Task<IActionResult> OnPostDelete()
         {
-            var deleted = await blogPostRepository.DeleteAsync(BlogPost.Id);
+            var deleted = await bikeRouteRepository.DeleteAsync(BikeRoute.Id);
             if (deleted)
             {
                 var notification = new Notification
@@ -122,10 +122,10 @@ namespace Bloggie.Web.Pages.Admin.Blogs
 
         private void ValidateEditBlogPost()
         {
-            if (!string.IsNullOrWhiteSpace(BlogPost.Heading))
+            if (!string.IsNullOrWhiteSpace(BikeRoute.Heading))
             {
                 // check for minimum length
-                if(BlogPost.Heading.Length < 10 || BlogPost.Heading.Length > 72)
+                if(BikeRoute.Heading.Length < 10 || BikeRoute.Heading.Length > 72)
                 {
                     ModelState.AddModelError("BlogPost.Heading",
                         "Heading can only be between 10 and 72 characters");

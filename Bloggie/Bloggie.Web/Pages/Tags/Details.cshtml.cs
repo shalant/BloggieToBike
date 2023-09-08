@@ -1,24 +1,24 @@
-using Bloggie.Web.Models.Domain;
-using Bloggie.Web.Repositories;
+using BloggieToBike.Web.Models.Domain;
+using BloggieToBike.Web.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Bloggie.Web.Pages.Tags
+namespace BloggieToBike.Web.Pages.Tags
 {
     public class DetailsModel : PageModel
     {
-        private readonly IBlogPostRepository blogPostRepository;
+        private readonly IBikeRouteRepository bikeRouteRepository;
 
-        public List<BlogPost> Blogs { get; set; }
+        public List<BikeRoute> Routes { get; set; }
 
-        public DetailsModel(IBlogPostRepository blogPostRepository)
+        public DetailsModel(IBikeRouteRepository bikeRouteRepository)
         {
-            this.blogPostRepository = blogPostRepository;
+            this.bikeRouteRepository = bikeRouteRepository;
         }
 
         public async Task<IActionResult> OnGet(string tagName)
         {
-            Blogs = (await blogPostRepository.GetAllAsync(tagName)).ToList();
+            Routes = (await bikeRouteRepository.GetAllAsync(tagName)).ToList();
             return Page();
         }
     }

@@ -1,5 +1,5 @@
 ﻿@page
-@model Bloggie.Web.Pages.Admin.Blogs.AddModel
+@model BloggieToBike.Web.Pages.Admin.BikeRoutes.AddModel
 @{
 }
 
@@ -14,27 +14,27 @@
         <form method="post">
             <div class="mb-3">
                 <label for="heading" class="form-label">Heading</label>
-                <input type="text" required class="form-control" id="heading" asp-for="AddBlogPostRequest.Heading">
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.Heading"></span>
+                <input type="text" required class="form-control" id="heading" asp-for="AddBikeRouteRequest.Heading">
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.Heading"></span>
             </div>
             <div class="mb-3">
                 <label for="pageTitle" class="form-label">Page Title</label>
-                <input type="text" required class="form-control" id="pageTitle" asp-for="AddBlogPostRequest.PageTitle">
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.PageTitle"></span>
+                <input type="text" required class="form-control" id="pageTitle" asp-for="AddBikeRouteRequest.PageTitle">
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.PageTitle"></span>
 
             </div>
 
             <div class="mb-3">
                 <label for="content" class="form-label">Content</label>
-                <textarea class="form-control" required id="content" asp-for="AddBlogPostRequest.Content"></textarea>
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.Content"></span>
+                <textarea class="form-control" required id="content" asp-for="AddBikeRouteRequest.Content"></textarea>
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.Content"></span>
 
             </div>
 
             <div class="mb-3">
                 <label for="shortDescription" class="form-label">Short Description</label>
-                <input type="text" class="form-control" required id="shortDescription" asp-for="AddBlogPostRequest.ShortDescription">
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.ShortDescription"></span>
+                <input type="text" class="form-control" required id="shortDescription" asp-for="AddBikeRouteRequest.ShortDescription">
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.ShortDescription"></span>
 
             </div>
 
@@ -46,29 +46,29 @@
 
             <div class="mb-3">
                 <label for="featuredImageUrl" class="form-label">Featured Image Url</label>
-                <input type="text" class="form-control" required id="featuredImageUrl" asp-for="AddBlogPostRequest.FeaturedImageUrl">
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.FeaturedImageUrl"></span>
+                <input type="text" class="form-control" required id="featuredImageUrl" asp-for="AddBikeRouteRequest.FeaturedImageUrl">
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.FeaturedImageUrl"></span>
 
             </div>
 
             <div class="mb-3">
                 <label for="urlHandle" class="form-label">Url Handle</label>
-                <input type="text" class="form-control" required id="urlHandle" asp-for="AddBlogPostRequest.UrlHandle">
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.UrlHandle"></span>
+                <input type="text" class="form-control" required id="urlHandle" asp-for="AddBikeRouteRequest.UrlHandle">
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.UrlHandle"></span>
 
             </div>
 
             <div class="mb-3">
                 <label for="publishedDate" class="form-label">Published Date</label>
-                <input type="date" class="form-control" required id="publishedDate" asp-for="AddBlogPostRequest.PublishedDate">
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.PublishedDate"></span>
+                <input type="date" class="form-control" required id="publishedDate" asp-for="AddBikeRouteRequest.PublishedDate">
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.PublishedDate"></span>
 
             </div>
 
             <div class="mb-3">
                 <label for="author" class="form-label">Author</label>
-                <input type="text" class="form-control" required id="author" asp-for="AddBlogPostRequest.Author">
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.Author"></span>
+                <input type="text" class="form-control" required id="author" asp-for="AddBikeRouteRequest.Author">
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.Author"></span>
 
             </div>
 
@@ -80,11 +80,11 @@
             </div>
 
             <div class="form-check mb-3">
-                <input class="form-check-input" type="checkbox" id="isVisible" asp-for="AddBlogPostRequest.Visible">
+                <input class="form-check-input" type="checkbox" id="isVisible" asp-for="AddBikeRouteRequest.Visible">
                 <label class="form-check-label" for="isVisible">
                     Is Visible
                 </label>
-                <span class="text-danger" asp-validation-for="AddBlogPostRequest.Heading"></span>
+                <span class="text-danger" asp-validation-for="AddBikeRouteRequest.Heading"></span>
 
             </div>
 

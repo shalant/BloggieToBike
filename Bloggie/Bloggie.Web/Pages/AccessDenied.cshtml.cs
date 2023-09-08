@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Bloggie.Web.Pages
+namespace BloggieToBike.Web.Pages
 {
     public class AccessDeniedPageModel : PageModel
     {

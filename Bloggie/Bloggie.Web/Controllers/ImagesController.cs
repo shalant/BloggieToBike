@@ -1,8 +1,8 @@
-﻿using Bloggie.Web.Repositories;
+﻿using BloggieToBike.Web.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace Bloggie.Web.Controllers
+namespace BloggieToBike.Web.Controllers
 {
     [ApiController]
     [Route("api/images")]

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Bloggie.Web.Models.ViewModels
+namespace BloggieToBike.Web.Models.ViewModels
 {
     public class AddUser
     {

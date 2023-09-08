@@ -1,9 +1,9 @@
-using Bloggie.Web.Models.ViewModels;
+using BloggieToBike.Web.Models.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Bloggie.Web.Pages
+namespace BloggieToBike.Web.Pages
 {
     public class LoginModel : PageModel
     {

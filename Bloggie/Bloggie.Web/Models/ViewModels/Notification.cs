@@ -1,6 +1,6 @@
-﻿using Bloggie.Web.Enums;
+﻿using BloggieToBike.Web.Enums;
 
-namespace Bloggie.Web.Models.ViewModels
+namespace BloggieToBike.Web.Models.ViewModels
 {
     public class Notification
     {

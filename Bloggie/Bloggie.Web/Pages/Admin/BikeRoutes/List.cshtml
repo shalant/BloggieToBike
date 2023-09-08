@@ -1,5 +1,5 @@
 ﻿@page
-@model Bloggie.Web.Pages.Admin.Blogs.ListModel
+@model BloggieToBike.Web.Pages.Admin.BikeRoutes.ListModel
 @{
 }
 
@@ -11,7 +11,7 @@
 
 <partial name="_Notification"></partial>
 
-@if(Model.BlogPosts != null && Model.BlogPosts.Any())
+@if (Model.BikeRoutes != null && Model.BikeRoutes.Any())
 {
     <div class="container">
         <table class="table">
@@ -23,12 +23,12 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var blogPost in Model.BlogPosts)
+                @foreach (var bikeRoute in Model.BikeRoutes)
                 {
                     <tr>
-                        <td>@blogPost.Id</td>
-                        <td>@blogPost.Heading</td>
-                        <td><a href="/Admin/Blogs/Edit/@blogPost.Id">View</a></td>
+                        <td>@bikeRoute.Id</td>
+                        <td>@bikeRoute.Heading</td>
+                        <td><a href="/Admin/Blogs/Edit/@bikeRoute.Id">View</a></td>
                     </tr>
                 }
             </tbody>

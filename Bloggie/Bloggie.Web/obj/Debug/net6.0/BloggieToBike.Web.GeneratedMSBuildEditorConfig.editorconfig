@@ -20,20 +20,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjZXNzRGVuaWVkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Admin/Blogs/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQmxvZ3NcQWRkLmNzaHRtbA==
+[C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Admin/BikeRoutes/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQmlrZVJvdXRlc1xBZGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Admin/Blogs/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQmxvZ3NcRWRpdC5jc2h0bWw=
+[C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Admin/BikeRoutes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQmlrZVJvdXRlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Admin/Blogs/List.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQmxvZ3NcTGlzdC5jc2h0bWw=
+[C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Admin/BikeRoutes/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQmlrZVJvdXRlc1xMaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Admin/Users/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/BikeRoute/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmlrZVJvdXRlXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/digdr/Documents/coding/BloggieToBike/Bloggie/Bloggie.Web/Pages/Blog/Details.cshtml]
