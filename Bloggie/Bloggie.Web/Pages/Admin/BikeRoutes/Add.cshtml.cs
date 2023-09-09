@@ -43,8 +43,8 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
 
                 var bikeRoute = new BikeRoute()
                 {
-                    Heading = AddBikeRouteRequest.Heading,
-                    PageTitle = AddBikeRouteRequest.PageTitle,
+                    //Heading = AddBikeRouteRequest.Heading,
+                    //PageTitle = AddBikeRouteRequest.PageTitle,
                     Content = AddBikeRouteRequest.Content,
                     ShortDescription = AddBikeRouteRequest.ShortDescription,
                     FeaturedImageUrl = AddBikeRouteRequest.FeaturedImageUrl,

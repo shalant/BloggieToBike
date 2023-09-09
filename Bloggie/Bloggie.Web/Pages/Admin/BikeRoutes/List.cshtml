@@ -1,5 +1,5 @@
 ﻿@page
-@model BloggieToBike.Web.Pages.Admin.BikeRoutes.ListModel
+@model BloggieToBike.Web.Pages.Admin.Routes.ListModel
 @{
 }
 
@@ -27,7 +27,7 @@
                 {
                     <tr>
                         <td>@bikeRoute.Id</td>
-                        <td>@bikeRoute.Heading</td>
+                        @*<td>@bikeRoute.Heading</td>*@
                         <td><a href="/Admin/Blogs/Edit/@bikeRoute.Id">View</a></td>
                     </tr>
                 }

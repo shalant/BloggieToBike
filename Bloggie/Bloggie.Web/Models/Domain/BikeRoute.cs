@@ -1,6 +1,4 @@
-﻿using BloggieToBike.Web.Models.Domain;
-
-namespace BloggieToBike.Web.Models.Domain
+﻿namespace BloggieToBike.Web.Models.Domain
 {
     public class BikeRoute
     {

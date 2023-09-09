@@ -10,21 +10,21 @@
 
             <h2 class="mb-5 display-3">Blogs</h2>
 
-            @if (Model.BikeRoutes != null && Model.BikeRoutes.Any())
+            @if (Model.Routes != null && Model.Routes.Any())
             {
-                foreach (var blog in Model.BikeRoutes)
+                foreach (var route in Model.Routes)
                 {
                     <div class="mb-5 bg-light box-shadow">
-                        <img src="@blog.FeaturedImageUrl" alt="@blog.Heading" class="mb-2 d-block img-fluid" />
+                        <img src="@route.FeaturedImageUrl" alt="@route.Name" class="mb-2 d-block img-fluid" />
                         <div class="px-4 py-4">
-                            <h2 class="mb-2">@blog.Heading</h2>
+                            <h2 class="mb-2">@route.Name</h2>
                             <p>
-                                Author: @blog.Author
+                                Author: @route.Author
                                 <br />
-                                Date Published: @blog.PublishedDate.ToShortDateString()
+                                Date Published: @route.PublishedDate.ToShortDateString()
                             </p>
-                            <p class="mb-2">@blog.ShortDescription</p>
-                            <a href="/blog/@blog.UrlHandle" class="btn btn-dark">Read More</a>
+                            <p class="mb-2">@route.ShortDescription</p>
+                            <a href="/blog/@route.StravaLink" class="btn btn-dark">Read More</a>
                         </div>
                     </div>
                 }

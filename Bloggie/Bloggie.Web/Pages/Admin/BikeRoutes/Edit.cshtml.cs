@@ -66,12 +66,11 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
                     var bikeRouteDomainModel = new BikeRoute
                     {
                         Id = BikeRoute.Id,
-                        Heading = BikeRoute.Heading,
-                        PageTitle = BikeRoute.PageTitle,
+                        //Name = BikeRoute.Name,
                         Content = BikeRoute.Content,
                         ShortDescription = BikeRoute.ShortDescription,
                         FeaturedImageUrl = BikeRoute.FeaturedImageUrl,
-                        UrlHandle = BikeRoute.UrlHandle,
+                        //StravaLink = BikeRoute.StravaLink,
                         PublishedDate = BikeRoute.PublishedDate,
                         Author = BikeRoute.Author,
                         Visible = BikeRoute.Visible,
@@ -120,7 +119,7 @@ namespace BloggieToBike.Web.Pages.Admin.BikeRoutes
             return Page();
         }
 
-        private void ValidateEditBlogPost()
+        private void ValidateEditBikeRoute()
         {
             if (!string.IsNullOrWhiteSpace(BikeRoute.Heading))
             {
